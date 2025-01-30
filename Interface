@@ -1,0 +1,45 @@
+# Interface
+// Define an interface
+interface Animal {
+    // Abstract method (does not have a body)
+    void makeSound();
+    
+    // Default method (introduced in Java 8)
+    default void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+// Implement the interface in a class
+class Dog implements Animal {
+    // Implementing the abstract method
+    public void makeSound() {
+        System.out.println("Woof! Woof!");
+    }
+}
+
+// Another class implementing the same interface
+class Cat implements Animal {
+    public void makeSound() {
+        System.out.println("Meow! Meow!");
+    }
+}
+
+// Main class
+public class InterfaceExample {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+        
+        myDog.makeSound();  // Output: Woof! Woof!
+        myDog.sleep();      // Output: Sleeping...
+        
+        myCat.makeSound();  // Output: Meow! Meow!
+        myCat.sleep();      // Output: Sleeping...
+    }
+}
+Output:
+Woof! Woof!
+Sleeping...
+Meow! Meow!
+Sleeping...
